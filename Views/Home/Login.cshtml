@@ -1,0 +1,16 @@
+@model AUTH2_TEST.Models.User
+@{
+  ViewData["Title"] = "Login to Auth Test 2";
+}
+
+<div>
+  <form asp-controller="Home" asp-action="PerformLogin" method="post">
+    <label asp-for="Username"></label> 
+    @Html.TextBoxFor(m => m.Username)
+    @Html.ValidationMessageFor(m => m.Username) <br />
+    <label asp-for="Password"></label>
+    @Html.PasswordFor(m => m.Password)
+    @Html.ValidationMessageFor(m => m.Password) <br />
+    <input type="submit" value="Login" class="text-right"/>
+  </form>
+</div>
